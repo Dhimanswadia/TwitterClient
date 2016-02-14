@@ -10,8 +10,8 @@ import UIKit
 
 class TweetCell: UITableViewCell {
     
-    @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
@@ -21,23 +21,19 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    
-    @IBOutlet weak var testImageView: UIImageView!
-    
     var tweetID: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // rounded edges on photo
-        avatarImageView.layer.cornerRadius = 5
+        avatarImageView.layer.cornerRadius = 6
         avatarImageView.clipsToBounds = true
     }
     
     var tweet: Tweet! {
         didSet {
-            fullNameLabel.text = tweet.user?.name
-            usernameLabel.text = "@\((tweet.user?.screenname)!)"
+            NameLabel.text = tweet.user?.name
+            userLabel.text = "@\((tweet.user?.screenname)!)"
             descriptionLabel.text = tweet.text
             timestampLabel.text = tweet.createdAtString
             tweetID = tweet.id
