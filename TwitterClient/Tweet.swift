@@ -26,7 +26,7 @@ class Tweet: NSObject {
         id = dictionary["id"] as! Int
         
         let formatter = NSDateFormatter() // expensive
-        formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+        formatter.dateFormat = " EEE MMM d GG HH:mm:ss Z y "
         createdAt = formatter.dateFromString(createdAtString!)
         // use lazy when you need the variable
         
