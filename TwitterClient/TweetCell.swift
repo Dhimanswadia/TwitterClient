@@ -39,17 +39,16 @@ class TweetCell: UITableViewCell {
             tweetID = tweet.id
             retweetCountLabel.text = "\(tweet.retweetCount)"
             favoriteCountLabel.text = "\(tweet.favoriteCount)"
+            self.avatarImageView.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
             
             let retweetedImageName = tweet.retweeted! == false ? "retweet-action" : "retweet-action-pressed"
             retweetButton.setImage(UIImage(named: retweetedImageName), forState: .Normal)
             
-            let favoritedImageName = tweet.favorited == false ? "like-action" : "like-action-pressed"
+            let favoritedImageName = tweet.favorited == false ? "like-action" : "likeactionpressed"
             favoriteButton.setImage(UIImage(named: favoritedImageName), forState: .Normal)
             
-            if let imgUrl = tweet.user?.profileImageUrl {
-                
-                avatarImageView.setImageWithURL(NSURL(string: imgUrl)!)
-            }
+            
+          
         }
     }
     
