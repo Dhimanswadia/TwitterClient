@@ -34,7 +34,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/K4l2Fpu.gif' />
+<img src='http://i.imgur.com/5FTNyH3.gif' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -71,7 +71,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/5FTNyH3.gifv' />
+<img src='http://i.imgur.com/5FTNyH3.gif' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
