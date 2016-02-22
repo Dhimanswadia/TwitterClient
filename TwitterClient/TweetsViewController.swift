@@ -60,16 +60,37 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    @IBAction func onAvatarImagePress(sender: AnyObject) {
+        let button = sender as! UIButton
+        let view = button.superview!
+       let cell = view.superview as! TweetCell
+        let indexPath = tableView.indexPathForCell(cell)
+        selectedTweet = tweets![indexPath!.row]
+   }
     
-
-    /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        print("second")
+        
+        let dc = segue.destinationViewController
+        
+        if let dc = dc as? DetailViewController {
+            dc.tweet = selectedTweet
+        }
+            
+        else if let dc = dc as? CreateViewController {
+            dc.user = User.currentUser
+        }
+            
+      else if let dc = dc as? ProfileViewController {
+          dc.user = selectedTweet.user
+        }
+       
+        
+   }
+
 
 }

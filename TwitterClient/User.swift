@@ -19,6 +19,13 @@ class User: NSObject {
     var tagline: String?
     var dictionary: NSDictionary
     
+    var tweet_count: Int?
+    var followers_count: Int?
+    var following_count: Int?
+    var backgroundImageUrl: String?
+
+
+    
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         // pull user from persistance
@@ -27,8 +34,18 @@ class User: NSObject {
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
+        
+        tweet_count = dictionary["statuses_count"] as? Int
+        followers_count = dictionary["followers_count"] as? Int
+        following_count = dictionary["friends_count"] as? Int
+        backgroundImageUrl = dictionary["profile_background_image_url"] as? String
+
+
     }
-    
+   
+
+
+
     func logout() {
         User.currentUser = nil
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
